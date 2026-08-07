@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Manage Users</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>👤 Manage Users</h1>
+
+    <table>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Username</th>
+
+            <th>Role</th>
+
+        </tr>
+
+        {% for user in users %}
+
+        <tr>
+
+            <td>
+                {{ user.id }}
+            </td>
+
+            <td>
+                {{ user.username }}
+            </td>
+
+            <td>
+                {{ user.role }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <a
+        href="/admin/dashboard"
+        class="back"
+    >
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>
